@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment Front Page</title>
+    <style>
+        @media print {
+            body { margin: 0; padding: 1cm; }
+            .print-button { display: none !important; }
+            .input-field { border-bottom: 1px solid black !important; }
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 0 auto;
+            padding: 2cm;
+            font-size: 14pt;
+        }
+        .header { text-align: center; margin-bottom: 20px; }
+        .form-field { margin: 15px 0; }
+        .input-field {
+            border: none;
+            border-bottom: 1px dotted black;
+            margin-left: 10px;
+            padding: 0 5px;
+            font-family: inherit;
+            font-size: 14pt;
+        }
+        .input-field:focus { outline: none; }
+        .print-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 20px auto;
+            display: block;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .signature-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature-box {
+            width: 45%;
+        }
+        .inline-group { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .paper-group { display: flex; align-items: baseline; }
+        .right-align { float: right; text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>FORMAT FOR ASSESSMENT FRONT PAGE</h3>
+        <h4>DEPARTMENT OF MATHEMATICS B.S.N.V.PG COLLEGE LUCKNOW</h4>
+        <p>Academic Session year 2021-22</p>
+    </div>
+
+    <div class="form-field">
+        NAME OF STUDENT: <input type="text" class="input-field" placeholder=" " style="width: 300px;">
+    </div>
+
+    <div class="form-field">
+        ROLL NO OF UNIVERSITY / I.D NO OF COLLEGE: <input type="text" class="input-field" style="width: 200px;">
+    </div>
+
+    <div class="form-field inline-group">
+        CLASS: <input type="text" class="input-field" style="width: 80px;" placeholder="BSc MCP">
+        SECTION: <input type="text" class="input-field" style="width: 50px;">
+        SEMESTER NO: <input type="text" class="input-field" style="width: 100px;" placeholder="2nd Semester">
+        SUBMISSION DATE: <input type="text" class="input-field" style="width: 100px;" placeholder="01/01/2025">
+    </div>
+
+    <div class="form-field paper-group">
+        <span>PAPER NUMBER: <input type="text" class="input-field" style="width: 50px;">
+        <span style="margin-left: 20px;">PAPER'S COMPLETE NAME: <input type="text" class="input-field" style="width: 300px;">
+    </div>
+
+    <div class="form-field">
+        TITLE/TOPIC OF PROJECT: <input type="text" class="input-field" style="width: 500px;">
+    </div>
+
+    <div class="form-field">
+        FATHER'S NAME: <input type="text" class="input-field" style="width: 400px;">
+    </div>
+
+    <div class="form-field">
+        MOTHER'S NAME: <input type="text" class="input-field" style="width: 400px;">
+    </div>
+
+    <div class="form-field">
+        ADDRESS FOR COMMUNICATION: <input type="text" class="input-field" style="width: 600px;">
+    </div>
+
+    <div class="form-field">
+        AADHAR NO. OF STUDENT: <input type="text" class="input-field" style="width: 300px;">
+    </div>
+
+    <div class="form-field">
+        MOBILE NO OF STUDENT: <input type="text" class="input-field" style="width: 200px;">
+    </div>
+
+    <div class="form-field">
+        NAME OF TEACHERS/PANEL:<br>
+        1. <input type="text" class="input-field" style="width: 300px;"><br>
+        2. <input type="text" class="input-field" style="width: 300px;"><br>
+        3. <input type="text" class="input-field" style="width: 300px;">
+    </div>
+
+    <div class="form-field">
+        MARKS OBTAINED: <input type="text" class="input-field" style="width: 50px;"> /20
+    </div>
+
+    <div class="signature-section">
+        <div class="signature-box">
+            SIGNATURE OF STUDENT: <br>
+            <input type="text" class="input-field" style="width: 300px; margin-top: 5px;">
+        </div>
+        <div class="signature-box right-align">
+            SIGNATURE OF EXAMINER: <br>
+            <input type="text" class="input-field" style="width: 300px; margin-top: 5px;">
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Form</button>
+</body>
+</html>
