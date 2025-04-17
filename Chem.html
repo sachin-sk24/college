@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry Assignment Front Page</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: "Times New Roman", serif;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 14pt;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+        .container {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 0 auto;
+            padding: 2cm;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .editable {
+            border: 1px dashed #ccc;
+            padding: 2px;
+            min-width: 50px;
+            display: inline-block;
+        }
+        .underline-field {
+            border-bottom: 1px solid #000;
+            display: inline-block;
+            min-width: 300px;
+            height: 20px;
+            margin-left: 10px;
+            padding: 0 5px;
+        }
+        .college-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .divider {
+            border-top: 1px solid #000;
+            margin: 15px auto;
+            width: 80%;
+        }
+        .assignment-title {
+            text-align: center;
+            font-size: 16pt;
+            margin: 25px 0 10px 0;
+        }
+        .details-section {
+            margin: 30px 0;
+            padding-left: 50px;
+        }
+        .section-heading {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .detail-row {
+            margin-bottom: 12px;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 0 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        @media print {
+            button, .controls {
+                display: none !important;
+            }
+            .editable {
+                border: none;
+                padding: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                padding: 2cm;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" contenteditable="true">
+        <div class="college-header">
+            <div class="editable" style="font-size: 18pt; font-weight: bold; text-transform: uppercase;">B. S. N. V. Postgraduate College</div>
+            <br>
+             <div class="editable">Charbagh, Lucknow</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="assignment-title editable">ASSIGNMENT</div>
+        <div class="editable" style="text-align: center; font-style: italic;">(Internal Assessment)</div>
+        
+        <div class="editable" style="text-align: center; font-style: italic; margin: 15px 0;">Submitted to</div>
+        
+        <div class="divider"></div>
+        
+        <div class="editable" style="text-align: center; font-weight: bold;">Department of Chemistry</div>
+        <div style="text-align: center;">
+            <span class="editable">Session:</span> <span class="underline-field editable"></span>
+        </div>
+        
+        <div class="editable" style="text-align: center; margin-bottom: 40px;">
+            (Inorg./Org./Phy. Chemistry/Co Curriculum/Vocational)
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <div>Title-<span class="underline-field editable"></span></div>
+            <div><span class="underline-field editable"></span></div>
+            <div><span class="underline-field editable"></span></div>
+        </div>
+        
+        <div class="details-section">
+            <div class="section-heading editable">Teacher's detail:</div>
+            <div class="detail-row">
+                <span class="editable">Name:</span> <span class="underline-field editable"></span>
+            </div>
+            <div class="detail-row">
+                <span class="editable">Designation:</span> <span class="underline-field editable"></span>
+            </div>
+            <div class="detail-row editable">Deptt. Of Chemistry</div>
+            <div class="detail-row editable">B.S.N.V. P.G. College</div>
+            <div class="detail-row editable">Lucknow</div>
+        </div>
+        
+        <div class="details-section">
+            <div class="section-heading editable">Student's detail:</div>
+            <div class="detail-row">
+                <span class="editable">Name -</span> <span class="underline-field editable"></span>
+            </div>
+            <div class="detail-row">
+                <span class="editable">Class(Sem.)/Sec. -</span> <span class="underline-field editable"></span>
+            </div>
+            <div class="detail-row">
+                <span class="editable">Class Roll N. -</span> <span class="underline-field editable"></span>
+            </div>
+            <div class="detail-row">
+                <span class="editable">Exam Roll N. -</span> <span class="underline-field editable"></span>
+            </div>
+            <div class="detail-row">
+                <span class="editable">Mobile N. -</span> <span class="underline-field editable"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="window.print()">Print Form</button>
+        <button onclick="toggleEdit()">Toggle Edit Mode</button>
+        <button onclick="saveForm()">Save Form</button>
+        <button onclick="loadForm()">Load Saved</button>
+    </div>
+
+    <script>
+        function toggleEdit() {
+            const container = document.querySelector('.container');
+            container.contentEditable = container.contentEditable === 'true' ? 'false' : 'true';
+            alert(`Edit mode ${container.contentEditable === 'true' ? 'ON' : 'OFF'}`);
+        }
+        
+        function saveForm() {
+            const content = document.querySelector('.container').innerHTML;
+            localStorage.setItem('savedForm', content);
+            alert('Form saved successfully!');
+        }
+        
+        function loadForm() {
+            const saved = localStorage.getItem('savedForm');
+            if (saved) {
+                document.querySelector('.container').innerHTML = saved;
+                alert('Form loaded successfully!');
+            } else {
+                alert('No saved form found!');
+            }
+        }
+        
+        // Make all underline fields clickable to edit
+        document.querySelectorAll('.underline-field').forEach(field => {
+            field.addEventListener('click', function() {
+                this.focus();
+            });
+        });
+    </script>
+</body>
+</html>
