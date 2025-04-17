@@ -2,204 +2,186 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chemistry Assignment Front Page</title>
+    <title>Chemistry Assignment</title>
     <style>
+        /* A4 Page Setup */
         @page {
             size: A4;
-            margin: 2cm;
+            margin: 0;
         }
         body {
             font-family: "Times New Roman", serif;
-            width: 100%;
             margin: 0;
             padding: 0;
             font-size: 14pt;
             line-height: 1.5;
             background-color: #fff;
         }
-        .container {
+        .page {
             width: 21cm;
-            min-height: 29.7cm;
+            height: 29.7cm;
             margin: 0 auto;
-            padding: 2cm;
+            padding: 2.5cm;
             box-sizing: border-box;
             position: relative;
+            border: 1px solid black;
+            background: white;
         }
-        .editable {
-            border: 1px dashed #ccc;
-            padding: 2px;
-            min-width: 50px;
-            display: inline-block;
-        }
-        .underline-field {
-            border-bottom: 1px solid #000;
-            display: inline-block;
-            min-width: 300px;
-            height: 20px;
-            margin-left: 10px;
-            padding: 0 5px;
-        }
-        .college-header {
+        
+        /* Content Styling */
+        .header {
             text-align: center;
             margin-bottom: 20px;
         }
+        .college-name {
+            font-size: 18pt;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .college-address {
+            font-size: 12pt;
+            margin-top: 5px;
+        }
         .divider {
-            border-top: 1px solid #000;
+            border-top: 1px solid black;
             margin: 15px auto;
             width: 80%;
         }
         .assignment-title {
             text-align: center;
             font-size: 16pt;
-            margin: 25px 0 10px 0;
+            color: red;
+            text-transform: uppercase;
+            margin: 20px 0 5px 0;
         }
-        .details-section {
-            margin: 30px 0;
-            padding-left: 50px;
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 15px;
         }
-        .section-heading {
+        
+        /* Details Sections */
+        .details-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .teacher-section, .student-section {
+            width: 48%;
+        }
+        .section-title {
             font-weight: bold;
+            text-decoration: underline;
             margin-bottom: 15px;
         }
         .detail-row {
             margin-bottom: 12px;
         }
+        .underline-field {
+            border-bottom: 1px solid black;
+            min-width: 200px;
+            display: inline-block;
+            margin-left: 10px;
+            height: 18px;
+            padding: 0 5px;
+        }
+        
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        /* Controls */
         .controls {
             text-align: center;
-            margin: 20px 0;
+            margin-top: 30px;
         }
         button {
             padding: 8px 15px;
-            margin: 0 5px;
+            margin: 0 10px;
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
+        
+        /* Print Settings */
         @media print {
-            button, .controls {
-                display: none !important;
-            }
-            .editable {
+            .page {
                 border: none;
-                padding: 0;
-            }
-            body {
-                padding: 0;
-                margin: 0;
-            }
-            .container {
-                padding: 2cm;
+                padding: 2.5cm;
                 margin: 0;
                 width: 100%;
                 height: 100%;
+            }
+            button {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container" contenteditable="true">
-        <div class="college-header">
-            <div class="editable" style="font-size: 18pt; font-weight: bold; text-transform: uppercase;">B. S. N. V. Postgraduate College</div>
-            <br>
-             <div class="editable">Charbagh, Lucknow</div>
+    <div class="page">
+        <!-- College Header -->
+        <div class="header">
+            <div class="college-name">B. S. N. V. Postgraduate College</div>
+            <div class="college-address">Charbagh, Lucknow</div>
         </div>
         
         <div class="divider"></div>
         
-        <div class="assignment-title editable">ASSIGNMENT</div>
-        <br>
-        <div class="editable" style="text-align: center; font-style: italic;">(Internal Assessment)</div>
-        
-        <div class="editable" style="text-align: center; font-style: italic; margin: 15px 0;">Submitted to</div>
+        <!-- Assignment Title -->
+        <div class="assignment-title">ASSIGNMENT</div>
+        <div class="subtitle">(Internal Assessment)</div>
+        <div class="subtitle">Submitted to</div>
         
         <div class="divider"></div>
         
-        <div class="editable" style="text-align: center; font-weight: bold;">Department of Chemistry</div>
-        <div style="text-align: center;">
-            <span class="editable">Session:</span> <span class="underline-field editable"></span>
+        <!-- Department Info -->
+        <div style="text-align: center; font-weight: bold;">Department of Chemistry</div>
+        <div style="text-align: center; margin: 5px 0 20px 0;">
+            Session: <span class="underline-field"></span>
         </div>
-        
-        <div class="editable" style="text-align: center; margin-bottom: 40px;">
+        <div style="text-align: center; margin-bottom: 30px;">
             (Inorg./Org./Phy. Chemistry/Co Curriculum/Vocational)
         </div>
         
-        <div style="text-align: center; margin-bottom: 50px;">
-            <div>Title-<span class="underline-field editable"></span></div>
-            <div><span class="underline-field editable"></span></div>
-            <div><span class="underline-field editable"></span></div>
+        <!-- Title Section -->
+        <div class="title-section">
+            <div>Title-<span class="underline-field"></span></div>
+            <div><span class="underline-field"></span></div>
+            <div><span class="underline-field"></span></div>
         </div>
         
-        <div class="details-section">
-            <div class="section-heading editable">Teacher's detail:</div>
-            <div class="detail-row">
-                <span class="editable">Name:</span> <span class="underline-field editable"></span>
+        <!-- Teacher and Student Details -->
+        <div class="details-container">
+            <!-- Left Side - Teacher Details -->
+            <div class="teacher-section">
+                <div class="section-title">Teacher's detail:</div>
+                <div class="detail-row">Name: <span class="underline-field"></span></div>
+                <div class="detail-row">Designation: <span class="underline-field"></span></div>
+                <div class="detail-row">Deptt. Of Chemistry</div>
+                <div class="detail-row">B.S.N.V. P.G. College</div>
+                <div class="detail-row">Lucknow</div>
             </div>
-            <div class="detail-row">
-                <span class="editable">Designation:</span> <span class="underline-field editable"></span>
+            
+            <!-- Right Side - Student Details -->
+            <div class="student-section">
+                <div class="section-title">Student's detail:</div>
+                <div class="detail-row">Name -  < class="underline-field"> </div>
+                <div class="detail-row">Class(Sem.)/Sec. - < class="underline-field" > </div>
+                <div class="detail-row">Class Roll N. - <span class="underline-field"></span></div>
+                <div class="detail-row">Exam Roll N. - <span class="underline-field"></span></div>
+                <div class="detail-row">Mobile N. - <span class="underline-field"></span></div>
             </div>
-            <div class="detail-row editable">Deptt. Of Chemistry</div>
-            <div class="detail-row editable">B.S.N.V. P.G. College</div>
-            <div class="detail-row editable">Lucknow</div>
         </div>
         
-        <div class="details-section">
-            <div class="section-heading editable">Student's detail:</div>
-            <div class="detail-row">
-                <span class="editable">Name -</span> <span class="underline-field editable"></span>
-            </div>
-            <div class="detail-row">
-                <span class="editable">Class(Sem.)/Sec. -</span> <span class="underline-field editable"></span>
-            </div>
-            <div class="detail-row">
-                <span class="editable">Class Roll N. -</span> <span class="underline-field editable"></span>
-            </div>
-            <div class="detail-row">
-                <span class="editable">Exam Roll N. -</span> <span class="underline-field editable"></span>
-            </div>
-            <div class="detail-row">
-                <span class="editable">Mobile N. -</span> <span class="underline-field editable"></span>
-            </div>
+        <!-- Controls -->
+        <div class="controls">
+            <button onclick="window.print()">Print Form</button>
         </div>
     </div>
-
-    <div class="controls">
-        <button onclick="window.print()">Print Form</button>
-        <button onclick="toggleEdit()">Toggle Edit Mode</button>
-        <button onclick="saveForm()">Save Form</button>
-        <button onclick="loadForm()">Load Saved</button>
-    </div>
-
-    <script>
-        function toggleEdit() {
-            const container = document.querySelector('.container');
-            container.contentEditable = container.contentEditable === 'true' ? 'false' : 'true';
-            alert(`Edit mode ${container.contentEditable === 'true' ? 'ON' : 'OFF'}`);
-        }
-        
-        function saveForm() {
-            const content = document.querySelector('.container').innerHTML;
-            localStorage.setItem('savedForm', content);
-            alert('Form saved successfully!');
-        }
-        
-        function loadForm() {
-            const saved = localStorage.getItem('savedForm');
-            if (saved) {
-                document.querySelector('.container').innerHTML = saved;
-                alert('Form loaded successfully!');
-            } else {
-                alert('No saved form found!');
-            }
-        }
-        
-        // Make all underline fields clickable to edit
-        document.querySelectorAll('.underline-field').forEach(field => {
-            field.addEventListener('click', function() {
-                this.focus();
-            });
-        });
-    </script>
 </body>
 </html>
